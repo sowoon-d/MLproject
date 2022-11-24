@@ -1,0 +1,28 @@
+# 데이터 path
+data_path : './data/5movies.xlsx'
+
+# model 리스트 / 하이퍼파라미터 grid range 지정
+models : [
+  {
+    name : 'LR',
+    class : 'LogisticRegression',
+    params : {
+        'C': [15, 18, 19, 20, 22]
+    }
+  },
+  {
+    name : 'GNB',
+    class : 'GaussianNB',
+    params : {
+        "var_smoothing":[0.1, 0.3, 0.5, 0.7, 0.9, 1]
+    }
+  },
+  {
+    name : 'SVC',
+    class : 'SVC',
+    params : {'C': [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0, 1000.0], 
+                'gamma': [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0, 1000.0], 
+                'kernel': ['rbf']
+    }
+  }
+]
